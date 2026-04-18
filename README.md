@@ -64,3 +64,37 @@ The repository follows a modular structure to ensure scalability across multiple
 ```
 
 ---
+
+## 🚀 Running the Project
+
+Follow these steps to set up the global air quality surveillance system on your local machine.
+
+### 1. Prerequisites
+- **Python 3.10+** installed on your system.
+- An **OpenAQ API Key**. You can obtain one for free by creating an account at [explore.openaq.org](https://explore.openaq.org/).
+
+### 2. Installation & Setup
+```bash
+# Clone the repository
+git clone [https://github.com/yourusername/AQ-Chronos.git](https://github.com/yourusername/AQ-Chronos.git)
+cd AQ-Chronos
+
+# Create and activate a virtual environment (optional but recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install required dependencies
+pip install -r requirements.txt
+```
+
+### 3. Environment Configuration
+Create a ```.env``` file in the root directory by copying the example template:
+```bash
+# Clone the repository
+cp .env.example .env
+```
+Open the ```.env``` file and insert your OpenAQ API key:
+```bash
+OPENAQ_API_KEY=your_actual_api_key_here
+```
+### 4. Execution
