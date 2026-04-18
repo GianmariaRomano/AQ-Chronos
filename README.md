@@ -34,7 +34,6 @@ AQ-Chronos is a data science pipeline designed to:
 | *Waiting for first automated update...* | | |
 
 </div>
-
 ---
 
 ## ⚙️ Project Pipeline
@@ -53,7 +52,7 @@ The repository follows a modular structure to ensure scalability across multiple
 ├── .github/workflows
 │   └── daily_aqi.yml                    # GitHub Actions automation workflow
 ├── notebooks/
-│   └── sq_chronos.ipynb
+│   └── aq_chronos.ipynb
 ├── aq_chronos_air_map.html              # Generated interactive global map
 ├── daily_aqi.py                         # Script for daily README updates
 ├── requirements.txt                     # Project dependencies
