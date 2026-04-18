@@ -1,0 +1,7 @@
+prophet
+folium
+pandas
+matplotlib
+requests
+python-dotenv
+ipython
