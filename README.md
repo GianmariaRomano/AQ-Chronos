@@ -90,7 +90,6 @@ pip install -r requirements.txt
 ### 3. Environment Configuration
 Create a ```.env``` file in the root directory by copying the example template:
 ```bash
-# Clone the repository
 cp .env.example .env
 ```
 Open the ```.env``` file and insert your OpenAQ API key:
@@ -98,3 +97,10 @@ Open the ```.env``` file and insert your OpenAQ API key:
 OPENAQ_API_KEY=your_actual_api_key_here
 ```
 ### 4. Execution
+Open ```notebooks/aq_chronos.ipynb``` in Jupyter to run the Prophet forecasting model, generate the ```aq_chronos_air_map.html``` file and view diagnostics.
+
+In particular, you can change the ```LOCATION_IDS``` dictionary in your local files to analyse the air quality patterns for other cities as well.
+
+You can get the IDs for other cities by using the [OpenAQ Explorer](https://explore.openaq.org/#1.2/20/40) web application.
+
+---
