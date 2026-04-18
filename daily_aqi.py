@@ -41,7 +41,7 @@ def get_all_aqi():
             status = "🟢 Good" if val <= 12 else "🟡 Moderate" if val <= 35 else "🟠 Sensitive" if val <= 55 else "🔴 Unhealthy"
             rows.append(f"| {city} | {val:.2f} | {status} |")
         except:
-            rows.append(f"| {city} | N/A | ⚪ Not Available |") # Added fallback status
+            rows.append(f"| {city} | N/A | ⚪ Not Available |") # Fallback status.
         time.sleep(0.5)
     return rows
 
@@ -53,7 +53,7 @@ def update_readme(rows):
     with open("README.md", "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Targets the Markdown tags.
+    # Target the Markdown tags.
     updated_content = re.sub(
         r".*?",
         f"\n{new_table}\n",
