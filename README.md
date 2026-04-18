@@ -49,7 +49,7 @@ The repository follows a modular structure to ensure scalability across multiple
 
 ```html
 <pre>
-├── .github/workflows
+├── .github/workflows/
 │   └── daily_aqi.yml                    # GitHub Actions automation workflow
 ├── notebooks/
 │   └── aq_chronos.ipynb
