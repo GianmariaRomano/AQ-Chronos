@@ -34,6 +34,7 @@ AQ-Chronos is a data science pipeline designed to:
 | *Waiting for first automated update...* | | |
 
 </div>
+
 ---
 
 ## ⚙️ Project Pipeline
