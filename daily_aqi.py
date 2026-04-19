@@ -48,28 +48,23 @@ def get_all_aqi():
 def update_readme(rows):
     date_str = datetime.now().strftime("%Y-%m-%d %H:%M UTC")
     
-    # Format the new table inside the centered div.
-    new_table = (
+    # Build the table string.
+    table_content = (
         '<div align="center">\n\n'
         '| City | PM2.5 (µg/m³) | Status |\n'
         '| :--- | :---: | :---: |\n'
     )
-    new_table += "\n".join(rows)
-    new_table += f"\n\n*Last Updated: {date_str}*\n\n</div>"
+    table_content += "\n".join(rows)
+    table_content += f"\n\n*Last Updated: {date_str}*\n\n</div>"
     
     with open("README.md", "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Fix the bug on the regular expression.
+    # Fix the regular expression to ensure it only modifies the table
     pattern = r".*?"
-    replacement = f"\n{new_table}\n"
+    replacement = f"\n{table_content}\n"
 
-    updated_content = re.sub(
-        pattern,
-        replacement,
-        content,
-        flags=re.DOTALL
-    )
+    updated_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
 
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(updated_content)
