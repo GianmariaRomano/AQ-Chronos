@@ -47,16 +47,26 @@ def get_all_aqi():
 
 def update_readme(rows):
     date_str = datetime.now().strftime("%Y-%m-%d %H:%M UTC")
-    # Centered content string.
-    new_table = f'<div align="center">\n\n| City | PM2.5 (µg/m³) | Status |\n| :--- | :---: | :---: |\n' + "\n".join(rows) + f"\n\n*Last Updated: {date_str}*\n\n</div>"
+    
+    # Format the new table inside the centered div.
+    new_table = (
+        '<div align="center">\n\n'
+        '| City | PM2.5 (µg/m³) | Status |\n'
+        '| :--- | :---: | :---: |\n'
+    )
+    new_table += "\n".join(rows)
+    new_table += f"\n\n*Last Updated: {date_str}*\n\n</div>"
     
     with open("README.md", "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Target the Markdown tags.
+    # Fix the bug on the regular expression.
+    pattern = r".*?"
+    replacement = f"\n{new_table}\n"
+
     updated_content = re.sub(
-        r".*?",
-        f"\n{new_table}\n",
+        pattern,
+        replacement,
         content,
         flags=re.DOTALL
     )
