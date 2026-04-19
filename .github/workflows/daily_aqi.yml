@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v4  # FIXED: Changed from checkout to setup-python
+        uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
@@ -24,7 +24,7 @@ jobs:
       - name: Run Update Script
         env:
           OPENAQ_API_KEY: ${{ secrets.OPENAQ_API_KEY }}
-        run: python daily_aqi.py  # FIXED: Matches the filename in your README
+        run: python daily_aqi.py
 
       - name: Commit and Push Changes
         run: |
