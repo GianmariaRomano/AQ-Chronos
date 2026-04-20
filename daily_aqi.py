@@ -57,7 +57,7 @@ def update_readme(rows):
     table_content += "\n".join(rows)
     table_content += f"\n\n*Last Updated: {date_str}*\n\n</div>"
     
-    with open("README.md", "r", encoding="utf-8") as f:
+    with open("STATS.md", "r", encoding="utf-8") as f:
         content = f.read()
 
     # Fix the regular expression to ensure it only modifies the table
@@ -66,7 +66,7 @@ def update_readme(rows):
 
     updated_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
 
-    with open("README.md", "w", encoding="utf-8") as f:
+    with open("STATS.md", "w", encoding="utf-8") as f:
         f.write(updated_content)
 
 if __name__ == "__main__":
