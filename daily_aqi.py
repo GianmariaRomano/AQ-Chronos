@@ -60,10 +60,9 @@ def update_readme(rows):
     with open("STATS.md", "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Fix the regular expression to ensure it only modifies the table
+    # Fix the regular expression to ensure it only modifies the table.
     pattern = r".*?"
     replacement = f"\n{table_content}\n"
-
     updated_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
 
     with open("STATS.md", "w", encoding="utf-8") as f:
